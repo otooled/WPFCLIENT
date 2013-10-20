@@ -1,0 +1,84 @@
+﻿<Window x:Class="SelecTunes_Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Loaded="Window_Loaded"
+        Title="MainWindow" Height="500" Width="800">
+    <Grid>
+        <Grid Name="g0">
+            <Grid.Resources>
+
+            </Grid.Resources>
+            <TabControl Name="TabCtrl">
+
+                <!--Tab T1-->
+                <TabItem Name="Tab0" Header="1. Player Control">
+                    <Grid Name="t1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <Button Name="BtnPlay" Content="Play" Click="BtnPlay_Click"/>
+                            <Button Name="BtnPause" Content="Pause" Click="BtnPause_Click"/>
+                            <Button Name="BtnStop" Content="Stop" Click="BtnStop_Click"/>
+                            <ProgressBar Name="PrgBarTrack" Height="20" Margin="5,20"></ProgressBar>
+                            <TextBlock Name="TbkSeconds"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Margin="5,10" >Current Track:</TextBlock>
+                            <TextBlock Name="TbkCurrentSong" Margin="5,10"></TextBlock>
+                            <TextBlock Margin="5,10">Next Track:</TextBlock>
+                            <TextBlock Name="TbkNextTrack" Margin="5,10"></TextBlock>
+                            <TextBlock Margin="5,10">Qeued Tracks:</TextBlock>
+                            <ListBox Name="LbxQeuedTracks" Margin="5,10"></ListBox>
+                        </StackPanel>
+
+                    </Grid>
+                </TabItem>
+
+                <!--Tab T2-->
+                <TabItem Name="Tab1" Header="2. Upload Tracks">
+                    <Grid Name="t2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <StackPanel>
+                            <Button Name="BtnAddTracks" Click="BtnAddTracks_Click" Content="Add Tracks"/>
+                            <TextBlock>Select Track from Listbox to view details</TextBlock>
+                            <TextBlock>Artist:</TextBlock>
+                            <TextBlock Name="TbkArtist"></TextBlock>
+                            <TextBlock>Album:</TextBlock>
+                            <TextBlock Name="TbkAlbum"></TextBlock>
+                            <TextBlock>Genre:</TextBlock>
+                            <TextBlock Name="TbkGenre"></TextBlock>
+                        </StackPanel>
+                        
+                        <DockPanel Grid.Column="1">
+                            <TextBlock DockPanel.Dock="Top">Tracks Ready For Upload:</TextBlock>
+                            <Button Name="BtnUpload" Click="BtnUpload_Click" DockPanel.Dock="Bottom">Upload All Tracks</Button>
+                            <ListBox Name="LbxTracksUpload" SelectionChanged="LbxTracksUpload_SelectionChanged"></ListBox>
+                        </DockPanel>
+
+                    </Grid>
+                </TabItem>
+
+                <!--Tab T3-->
+                <TabItem Name="Tab2" Header="3. Search Music">
+                    <Grid Name="t3">
+
+                    </Grid>
+                </TabItem>
+
+                <!--Tab T4-->
+                <TabItem Name="Tab3" Header="4. Settings">
+                    <Grid Name="t4">
+
+                    </Grid>
+                </TabItem>
+
+            </TabControl>
+        </Grid>
+        </Grid>
+</Window>
