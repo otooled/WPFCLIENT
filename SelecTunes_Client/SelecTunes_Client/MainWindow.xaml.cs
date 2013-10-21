@@ -130,6 +130,7 @@ namespace SelecTunes_Client
                     PrgBarTrack.Value = 0;
                     mp.Play();
                     clock.Start();
+                    //comment in play method
                 }
                 else
                 {
